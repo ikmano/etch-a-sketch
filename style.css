@@ -30,8 +30,9 @@
     padding: 10px 0 20px;
 }
 .board{
-    width: 1000px;
+    width: 1200px;
     height: 100%;
+    border-radius: 8px;
     background-color: blueviolet;
     display: flex;
     justify-content: center;
@@ -40,7 +41,7 @@
 }
 .canvas{
     width: 960px;
-    height: 90%;
+    height: 92%;
     display: grid;
 }   
 .grid{
