@@ -14,16 +14,23 @@ function userInput(){
     if(input < 101) return input;
     else return userInput();
 }
+function randomColor(){
+    let red = Math.floor(Math.random()*256);
+    let green = Math.floor(Math.random()*256);
+    let blue = Math.floor(Math.random()*256);
+    return ConvertRGBtoHex(red,green,blue);
+}
 
 //function allows drawing into canvas
 function draw(){
+    let hex = randomColor();
     const blocks = document.querySelectorAll('.grid');
     blocks.forEach((block) =>{
         block.addEventListener('mouseenter', e =>{    
             //draw black
-            //e.target.style.opacity = '1';
+            e.target.style.opacity = '1';
             //draw fade
-            let opacity = e.target.style.opacity;
+            /*let opacity = e.target.style.opacity;
             if(opacity === ""){
                 opacity = "0.0";
             }
@@ -31,15 +38,14 @@ function draw(){
             if(opacity < 1.0){
                 opacity += 0.1;
                 e.target.style.opacity = opacity;
-            }
+            }*/
            //pick random color for each squer
-           let red = Math.floor(Math.random()*256);
-           let green = Math.floor(Math.random()*256);
-           let blue = Math.floor(Math.random()*256);
-           let hex = ConvertRGBtoHex(red,green,blue);
-           console.log(red +" "+green+" "+blue+" "+hex);
-            e.target.style.opacity = 1;
-            e.target.style.background = hex;
+            //e.target.style.opacity = 1;
+            //e.target.style.background = randomColor();
+            //pick random color for whole grid
+            //e.target.style.opacity = 1;
+            //e.target.style.background = hex;
+            
         });
     }); 
 }
