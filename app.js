@@ -1,3 +1,13 @@
+//color converter
+function ColorToHex(color) {
+    var hexadecimal = color.toString(16);
+    return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
+  }
+  
+  function ConvertRGBtoHex(red, green, blue) {
+    return "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue);
+  }
+
 //function to get and validate user input
 function userInput(){
     const input = prompt("Enter number of squers per side: (max 100)");
@@ -22,6 +32,14 @@ function draw(){
                 opacity += 0.1;
                 e.target.style.opacity = opacity;
             }
+           //pick random color for each squer
+           let red = Math.floor(Math.random()*256);
+           let green = Math.floor(Math.random()*256);
+           let blue = Math.floor(Math.random()*256);
+           let hex = ConvertRGBtoHex(red,green,blue);
+           console.log(red +" "+green+" "+blue+" "+hex);
+            e.target.style.opacity = 1;
+            e.target.style.background = hex;
         });
     }); 
 }
