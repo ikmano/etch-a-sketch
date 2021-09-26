@@ -13,39 +13,60 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: aqua;
     padding: 20px 0;
 }
 .header{
     display: flex;
     justify-content: center;
-    background-color: burlywood;
-    font-size:12px;
+    font-size:14px;
     font-family: 'Press Start 2P', cursive;
-}
-.btn-wrapper{
-    display: flex;
-    justify-content: center;
-    background-color: blue;
-    padding: 10px 0 20px;
+    padding-bottom: 25px;
 }
 .board{
     width: 1200px;
     height: 100%;
     border-radius: 8px;
-    background-color: blueviolet;
+    background-color: rgb(153, 25, 25);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    
+    box-shadow: 1px 1px 3px 2px rgb(158, 47, 47);
+}
+.btn-wrapper{
+    align-self: flex-start;
+    margin-top: 50px;
+}
+.btn-newGrid{
+    box-shadow:inset 0px 1px 0px 0px #cf866c;
+	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+	background-color:#d0451b;
+	border-radius:3px;
+	border:1px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #854629;
+}
+.btn-newGrid:hover {
+	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+	background-color:#bc3315;
+}
+.btn-newGrid:active {
+	position:relative;
+	top:1px;
 }
 .canvas{
     width: 960px;
     height: 92%;
     display: grid;
+    
 }   
 .grid{
     width: auto;
     height: auto;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
