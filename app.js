@@ -9,8 +9,20 @@ function userInput(){
 function draw(){
     const blocks = document.querySelectorAll('.grid');
     blocks.forEach((block) =>{
-        block.addEventListener('mouseenter', e =>{    
-            e.toElement.style.backgroundColor = 'black';
+        block.addEventListener('mouseenter', function(e){  
+            console.log(e);
+            //drawing with shading
+            /*opacity = e.target.style.opacity;
+            if(opacity === ""){
+                opacity = '0.0';
+            }
+            opacity = parseFloat(opacity);
+            if(opacity < 1.0){
+                opacity += 0.1; }           
+            e.target.style.opacity = opacity;*/
+
+            //drawing whith black color
+            //e.fromElement.style.backgroundColor = 'black';
         });
     }); 
 }
