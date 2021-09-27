@@ -20,38 +20,46 @@ function randomColor(){
     let blue = Math.floor(Math.random()*256);
     return ConvertRGBtoHex(red,green,blue);
 }
-
+//drawing mode functions
+function drawBasic(e){
+    e.target.style.opacity = 1;
+}
+function drawShade(e){
+    let opacity = e.target.style.opacity;
+        if(opacity === ""){
+            opacity = "0.0";
+        }
+        opacity = parseFloat(opacity);
+        if(opacity < 1.0){
+            opacity += 0.1;
+            e.target.style.opacity = opacity;
+        }
+}
+function drawRandomCol(e, hex){
+    e.target.style.opacity = 1;
+    e.target.style.background = hex;
+}
+function drawRainbow(e){
+    e.target.style.opacity = 1;
+    e.target.style.background = randomColor();
+}
 //function allows drawing into canvas
 function draw(){
-    let hex = randomColor();
+    const hex = randomColor();
     const blocks = document.querySelectorAll('.grid');
     blocks.forEach((block) =>{
-        block.addEventListener('mouseenter', e =>{    
-            //draw black
-            e.target.style.opacity = '1';
-            //draw fade
-            /*let opacity = e.target.style.opacity;
-            if(opacity === ""){
-                opacity = "0.0";
-            }
-            opacity = parseFloat(opacity);
-            if(opacity < 1.0){
-                opacity += 0.1;
-                e.target.style.opacity = opacity;
-            }*/
-           //pick random color for each squer
-            //e.target.style.opacity = 1;
-            //e.target.style.background = randomColor();
-            //pick random color for whole grid
-            //e.target.style.opacity = 1;
-            //e.target.style.background = hex;
-            
+        block.addEventListener('mouseenter', (e) =>{
+            const mode = document.querySelector('input[name="group"]:checked').value;
+            if(mode === 'basic')drawBasic(e);
+            if(mode === 'shade')drawShade(e);
+            if(mode === 'randomColor')drawRandomCol(e, hex);
+            if(mode === 'rainbow')drawRainbow(e);
         });
     }); 
 }
 
-//function generates new grid
-function newGrid(squers){
+//function generates grid
+function grid(squers){
     for(let i = 0; i < squers; i++){
         const div = document.createElement('div');
         div.classList.add('grid');
@@ -74,13 +82,7 @@ function createGrid(){
     document.getElementById('canvas').style.gridTemplateColumns = "repeat("+perRow+", 1fr)";
     document.getElementById('canvas').style.gridTemplateRows = "repeat("+perColumn+", 1fr)";
 
-    newGrid(squers);
+    grid(squers);
 }
 
 window.addEventListener('DOMContentLoaded',createGrid());
-
-
-
-
-
-
