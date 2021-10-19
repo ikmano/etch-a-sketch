@@ -10,7 +10,7 @@ function ColorToHex(color) {
 
 //function to get and validate user input
 function userInput(){
-    const input = prompt("Enter number of squers per side: (max 100)");
+    const input = prompt("Enter number of squers per row: (max 100)");
     if(input < 101) return input;
     else return userInput();
 }
