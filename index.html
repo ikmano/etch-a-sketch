@@ -15,34 +15,33 @@
         </div>
         <div class="board">
             <div class="btn-wrapper">
-                <button type="button" class="btn-newGrid" onclick="createGrid()">Clear Grid</button>
-                  <!-- Rounded switch -->
-                    <div class="radio-wrapper">
-                        <div class="labels">
-                            <label class="text">Black</label>
-                            <label class="text">Grey Shades</label>
-                            <label class="text">Random Color</label>
-                            <label class="text">Rainbow</label>
-                        </div>
-                        <div class="radios">
-                            <label class="switch">
-                                <input type="radio" value="basic" name="group" checked>
-                                <span class="slider round"></span>
-                            </label>
-                            <label class="switch">
-                                <input type="radio" name="group" value="shade">
-                                <span class="slider round"></span>
-                            </label>
-                            <label class="switch">
-                                <input type="radio" name="group" value="randomColor">
-                                <span class="slider round"></span>
-                            </label>
-                            <label class="switch">
-                                <input type="radio" name="group"  value="rainbow">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
+                <button type="button" class="btn-newGrid" onclick="boardFraming.createCanvas()">Clear Grid</button>
+                <div class="radio-wrapper">
+                    <div class="labels">
+                        <label class="text">Black</label>
+                        <label class="text">Shades of Grey</label>
+                        <label class="text">Random Color</label>
+                        <label class="text">Rainbow</label>
                     </div>
+                    <div class="radios">
+                        <label class="switch">
+                            <input type="radio" value="basic" name="group" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label class="switch">
+                            <input type="radio" name="group" value="shade">
+                            <span class="slider round"></span>
+                        </label>
+                        <label class="switch">
+                            <input type="radio" name="group" value="randomColor">
+                            <span class="slider round"></span>
+                        </label>
+                        <label class="switch">
+                            <input type="radio" name="group"  value="rainbow">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="canvas-wrapper">
                 <div id="canvas" class="canvas">
@@ -51,7 +50,6 @@
             </div>
         </div>
     </div>
-   
+    <script src="app.js" charset="UTF-8"></script>
 </body>
-<script src="app.js" charset="UTF-8"></script>
 </html>
